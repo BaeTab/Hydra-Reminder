@@ -1,0 +1,55 @@
+<Window x:Class="Hydra_Reminder.Views.PopupToast"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent" ResizeMode="NoResize"
+        ShowInTaskbar="False" Topmost="True" Width="300"
+        Focusable="False" SizeToContent="Height"  >
+    <Border x:Name="RootBorder" CornerRadius="18" Padding="18" Background="#E0222228" BorderBrush="#40FFFFFF" BorderThickness="1">
+        <Border.Effect>
+            <DropShadowEffect Color="#66000000" BlurRadius="24" ShadowDepth="2" Opacity="0.7"/>
+        </Border.Effect>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="12"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <!-- Icon Bubble -->
+            <Border x:Name="IconBubble" Grid.RowSpan="4" Width="60" Height="60" CornerRadius="30" Background="#3A7BEA" BorderBrush="#55FFFFFF" BorderThickness="1">
+                <Grid>
+                    <TextBlock Text="💧" FontSize="34" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+            </Border>
+
+            <!-- Main Text -->
+            <StackPanel Grid.Column="2" Grid.Row="0" Orientation="Vertical">
+                <TextBlock Text="물 마실 시간!" FontSize="20" FontWeight="Bold" Foreground="White"/>
+                <TextBlock Text="수분 보충 잊지 말아요 💙" Margin="0,4,0,0" Foreground="#CCFFFFFF" FontSize="13"/>
+            </StackPanel>
+
+            <!-- Cute divider dots -->
+            <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Horizontal" Margin="0,6,0,0" Opacity="0.5">
+                <Ellipse Width="4" Height="4" Fill="#66FFFFFF" Margin="0,0,4,0"/>
+                <Ellipse Width="4" Height="4" Fill="#66FFFFFF" Margin="0,0,4,0"/>
+                <Ellipse Width="4" Height="4" Fill="#66FFFFFF"/>
+            </StackPanel>
+
+            <!-- Buttons -->
+            <StackPanel Grid.Column="2" Grid.Row="2" Orientation="Horizontal" Margin="0,12,0,0">
+                <Button Style="{StaticResource ToastButtonStyle}" Content="완료" Click="Complete_Click" Width="34" Height="34"/>
+                <Button Style="{StaticResource ToastButtonStyle}" Content="스누즈" Margin="8,0,0,0" Click="Snooze_Click" Width="47" Height="35"/>
+                <Button Style="{StaticResource ToastDestructiveButtonStyle}" Content="오늘 그만" Margin="8,0,0,0" Click="DisableToday_Click"/>
+            </StackPanel>
+
+            <!-- Mini footer tip -->
+            <TextBlock Grid.Column="2" Grid.Row="3" Text="Tip: 스누즈는 5분" Foreground="#80FFFFFF" FontSize="11" Margin="0,10,0,0"/>
+        </Grid>
+    </Border>
+</Window>

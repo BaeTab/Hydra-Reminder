@@ -1,0 +1,140 @@
+# ---- Core build artifacts ----
+/bin/
+/obj/
+**/bin/
+**/obj/
+
+# VS build outputs
+*.exe
+*.dll
+*.pdb
+*.appx
+*.appxbundle
+*.cache
+*.mdb
+
+# Temporary & generated
+*.log
+*.tlog
+*.vspscc
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.pch
+*.rsp
+*.tmp
+*.tmp_proj
+*.pidb
+*.svclog
+*.ide
+
+# Visual Studio
+.vs/
+.vscode/*.*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Rider / JetBrains
+.idea/
+*.DotSettings.user
+
+# NuGet
+*.nupkg
+packages/
+**/packages/*
+# Except build/pack scripts that pin versions
+!packages/build/
+.nuget/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+# Auto-generated NuGet restore result
+*.nuget.props
+*.nuget.targets
+
+# MSBuild
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+# Publish / dist
+/publish/
+**/publish/
+/dist/
+**/dist/
+/release/
+**/release/
+
+# Coverage / test
+coverage*
+*.coverage
+*.coveragexml
+TestResult*/
+.trx
+
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings
+
+# StyleCop
+StyleCopReport.xml
+
+# Cache
+*.cache
+*~
+
+# Packages (node / others if used later)
+node_modules/
+
+# Generated code (if any future tools)
+Generated*/
+
+# WPF specific
+*.g.cs
+*.g.i.cs
+*.baml
+*.xaml.cs~
+
+# Local settings / secrets placeholder
+appsettings.*.local.json
+*.local.json
+Secrets.json
+
+# Crash / dumps
+*.dmp
+
+# OS / misc
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Git merge / patch
+*.orig
+*.rej
+
+# VS Code workspace storage
+.history/
+
+# Ignore user specific JSON caches
+*.vsidx
+
+# Rider solution caches
+/.idea/.idea.*
+
+# SQLite / LiteDB etc (if introduced later)
+*.db
+*.db-shm
+*.db-wal
+
+# Logs
+logs/
+*.ptvs
+
+# Prevent ignoring important files
+!.editorconfig
+!README.md
